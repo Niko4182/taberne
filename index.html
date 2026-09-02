@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us — Taberne</title>
+  <meta name="description" content="Taberne — a boutique hotel in central Tbilisi. 43 rooms, a Georgian breakfast table and a wine bar, opened in 2020." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ============ NAVBAR ============ -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">TABERNE</a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+      <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#top">Home</a></li>
+          <li><a href="#story" class="is-active">About</a></li>
+          <li><a href="#rooms">Rooms</a></li>
+          <li><a href="#guides">Experiences</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#reserve" class="btn btn--sm">Book a room</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="eyebrow">Our story</p>
+        <h1>A boutique hotel with a Georgian heart</h1>
+        <p class="hero-lead">
+          Taberne opened in the spring of 2020 in one of the liveliest parts of
+          Tbilisi &mdash; a short walk from the city&rsquo;s restaurants, bars and
+          main sights. Behind a red-brick fa&ccedil;ade are 43 rooms built around
+          one idea: elegance and comfort, without the fuss.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section id="story" class="section">
+      <div class="container grid-2">
+        <img class="media"
+             src="images/gallery-03.jpg"
+             alt="A Taberne double room with a velvet headboard, work desk and a small balcony" />
+        <div>
+          <h2>How it started</h2>
+          <p>
+            Taberne is a young hotel with a simple ambition: to bring a fresh
+            concept of accommodation to Tbilisi. It opened in the spring of 2020
+            on Vakhtang Orbeliani Street, in a neighbourhood full of restaurants,
+            local bars and landmarks you can reach on foot.
+          </p>
+          <p>
+            The building holds 43 rooms for business and leisure travellers alike,
+            each with free Wi-Fi and a calm, contemporary feel. The aim is the
+            same in every one &mdash; comfort and quiet in the middle of a busy
+            city.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VALUES ============ -->
+    <section class="section section--muted" id="guides">
+      <div class="container">
+        <h2 class="center">What guides us</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Elegance without the fuss</h3>
+            <p>A new concept of accommodation: 43 rooms that feel considered and comfortable, never overdone.</p>
+          </article>
+          <article class="card">
+            <h3>A Georgian table</h3>
+            <p>Buffet breakfast built on the region&rsquo;s freshest produce &mdash; freshly baked bread, khachapuri, vegetables and seasonal fruit.</p>
+          </article>
+          <article class="card">
+            <h3>Wine, and a place to meet</h3>
+            <p>A bar with a wide range of Georgian wines, and a modern meeting room with full AV for gatherings of up to 50.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ROOM GALLERY ============ -->
+    <section class="section" id="rooms">
+      <div class="container">
+        <h2 class="center">Rooms &amp; spaces</h2>
+        <p class="center section-lead">
+          43 rooms for business and leisure, plus a skylit restaurant, a wine bar
+          and a meeting room &mdash; all on Vakhtang Orbeliani Street.
+        </p>
+        <div class="gallery-grid">
+          <img src="images/gallery-15.jpg" alt="Spacious suite with floor-to-ceiling windows and a balcony over the city" />
+          <img src="images/gallery-05.jpg" alt="Double room with an orange velvet headboard and deep teal walls" />
+          <img src="images/gallery-11.jpg" alt="Room with a private balcony looking over the rooftops of Tbilisi" />
+          <img src="images/property-01.jpg" alt="The blue-panelled lounge with gold ring lights and a chequerboard floor" />
+          <img src="images/property-04.jpg" alt="The glass-roofed restaurant with marble tables and bentwood chairs" />
+          <img src="images/gallery-01.jpg" alt="Single room with a large window onto the street below" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUOTE ============ -->
+    <section class="section quote">
+      <div class="container">
+        <blockquote>
+          A new concept in accommodation &mdash; elegance and comfort in the
+          heart of Tbilisi, close to everything worth walking to.
+        </blockquote>
+        <p class="quote-by">&mdash; Taberne Boutique Hotel</p>
+      </div>
+    </section>
+
+    <!-- ============ RESERVE ============ -->
+    <section class="section section--muted" id="reserve">
+      <div class="container">
+        <h2 class="center">Reserve a room</h2>
+        <p class="center section-lead">
+          Send us your dates and we&rsquo;ll reply with availability and a price.
+        </p>
+
+        <form id="reserve-form" class="reserve-form" novalidate>
+          <div class="field">
+            <label for="rf-name">Full name</label>
+            <input id="rf-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="rf-email">Email</label>
+            <input id="rf-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="rf-arrival">Arrival</label>
+            <input id="rf-arrival" name="arrival" type="date" required />
+          </div>
+          <div class="field">
+            <label for="rf-departure">Departure</label>
+            <input id="rf-departure" name="departure" type="date" required />
+          </div>
+          <div class="field">
+            <label for="rf-guests">Guests</label>
+            <input id="rf-guests" name="guests" type="number" min="1" max="10" value="2" required />
+          </div>
+          <div class="field field--full">
+            <label for="rf-message">Anything we should know? <span class="opt">(optional)</span></label>
+            <textarea id="rf-message" name="message" rows="4"></textarea>
+          </div>
+          <div class="field field--full form-actions">
+            <button type="submit" class="btn">Send request</button>
+            <p class="form-note">This opens your email app — no booking is confirmed until we reply.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <h2>Come stay with us</h2>
+          <p>Rooms for business and leisure, a short walk from the best of Tbilisi.</p>
+        </div>
+        <a href="#reserve" class="btn">Reserve a room</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#top" class="brand brand--footer">TABERNE</a>
+        <p class="footer-note">A boutique hotel in central Tbilisi &mdash; 43 rooms, a Georgian breakfast table and a wine bar, opened 2020.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <p>3 Vakhtang Orbeliani St<br />Tbilisi 0105, Georgia</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Reception</h4>
+        <p>Front desk &middot; 24 hours<br />Meeting room for up to 50</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:+995599664499">+995 599 66 44 99</a><br />
+          <a href="https://www.taberne.ge">taberne.ge</a>
+        </p>
+        <ul class="social">
+          <li><a href="https://www.instagram.com/taberneboutiquehotel/">Instagram</a></li>
+          <li><a href="https://www.facebook.com/taberneboutiquehotel">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Taberne Boutique Hotel</p>
+      <p>3 Vakhtang Orbeliani St · Tbilisi 0105 · Georgia</p>
+    </div>
+  </footer>
+
+  <script>
+    // "Reserve a room" form: no server behind this site, so instead of sending
+    // the form we build a pre-filled email and open the visitor's mail app.
+    document.getElementById('reserve-form').addEventListener('submit', function (event) {
+      event.preventDefault();                 // don't reload the page
+
+      var val = function (id) { return document.getElementById(id).value.trim(); };
+
+      var name = val('rf-name');
+      var lines = [
+        'Name: '      + name,
+        'Email: '     + val('rf-email'),
+        'Arrival: '   + val('rf-arrival'),
+        'Departure: ' + val('rf-departure'),
+        'Guests: '    + val('rf-guests'),
+        '',
+        'Message:',
+        val('rf-message') || '(none)'
+      ];
+
+      var subject = 'Room request - ' + (name || 'website');
+      var mailto  = 'mailto:info@taberne.ge'
+                  + '?subject=' + encodeURIComponent(subject)
+                  + '&body='    + encodeURIComponent(lines.join('\n'));
+
+      window.location.href = mailto;          // opens the mail app
+    });
+  </script>
+</body>
+</html>
