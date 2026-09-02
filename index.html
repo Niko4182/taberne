@@ -156,16 +156,17 @@
       <div class="container">
         <h2 class="center">Reserve a room</h2>
         <p class="center section-lead">
-          Choose your dates below for live availability and prices, and book online.
+          Send us your dates and we&rsquo;ll confirm availability and a price by email.
+          Instant online booking is coming soon.
         </p>
 
-        <!-- Real-time booking engine (area.ly — Taberne property 134) -->
+        <!-- Real-time booking engine (area.ly — Taberne property 134).
+             Appears here once area.ly authorises this site's domain. -->
         <div class="booking-embed">
           <div id="ar-root" data-property="134"></div>
         </div>
 
-        <details class="reserve-fallback">
-          <summary>Booking not loading? Send a request by email instead</summary>
+        <div class="reserve-fallback">
           <form id="reserve-form" class="reserve-form" novalidate>
             <div class="field">
               <label for="rf-name">Full name</label>
@@ -196,7 +197,7 @@
               <p class="form-note">This opens your email app — no booking is confirmed until we reply.</p>
             </div>
           </form>
-        </details>
+        </div>
       </div>
     </section>
 

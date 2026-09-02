@@ -414,20 +414,8 @@ p { margin: 0 0 1rem; }
 }
 
 /* ---------- area.ly booking widget + email fallback ---------- */
-.booking-embed {
-  max-width: 900px;
-  margin: 0 auto;
-  min-height: 460px;
-}
-#ar-root { width: 100%; min-height: 460px; }
+.booking-embed { max-width: 900px; margin: 0 auto; }
+#ar-root:not(:empty) { width: 100%; min-height: 460px; margin-bottom: 32px; }
 #ar-root > iframe { width: 100%; border: 0; }
 
-.reserve-fallback { max-width: 720px; margin: 28px auto 0; }
-.reserve-fallback summary {
-  cursor: pointer;
-  text-align: center;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--wine-dark);
-}
-.reserve-fallback[open] summary { margin-bottom: 22px; }
+.reserve-fallback { max-width: 720px; margin: 0 auto; }
