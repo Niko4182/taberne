@@ -443,3 +443,65 @@ html:lang(ka) {
 @media (max-width: 860px) {
   .lang-switch { justify-content: center; margin-top: 6px; }
 }
+
+/* ---------- Room cards with photos + price ---------- */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.room-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.room-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.room-card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.room-card-body { padding: 22px 24px 26px; }
+.room-card-body h3 { color: var(--wine); margin-bottom: 0.3em; }
+.room-card-body p { margin: 0 0 0.6rem; color: var(--ink-soft); font-size: 0.96rem; }
+.room-price { margin-bottom: 0 !important; font-weight: 600; }
+.room-price a { color: var(--wine-dark); }
+.room-price a:hover { text-decoration: underline; }
+
+/* ---------- Amenities ---------- */
+.amenities {
+  list-style: none;
+  margin: 40px auto 0;
+  padding: 0;
+  max-width: 780px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 28px;
+}
+.amenities li { position: relative; padding-left: 22px; color: var(--ink-soft); }
+.amenities li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+.amenities-note { margin-top: 28px; color: var(--ink-soft); font-size: 0.9rem; }
+
+/* ---------- Good to know ---------- */
+.stay-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 32px;
+  margin-top: 44px;
+}
+.stay-grid h3 { font-size: 1.05rem; color: var(--wine); margin-bottom: 0.3em; }
+.stay-grid p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+@media (max-width: 860px) {
+  .rooms-grid { grid-template-columns: repeat(2, 1fr); }
+  .amenities  { grid-template-columns: repeat(2, 1fr); }
+  .stay-grid  { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .rooms-grid, .amenities, .stay-grid { grid-template-columns: 1fr; }
+}
