@@ -156,39 +156,47 @@
       <div class="container">
         <h2 class="center">Reserve a room</h2>
         <p class="center section-lead">
-          Send us your dates and we&rsquo;ll reply with availability and a price.
+          Choose your dates below for live availability and prices, and book online.
         </p>
 
-        <form id="reserve-form" class="reserve-form" novalidate>
-          <div class="field">
-            <label for="rf-name">Full name</label>
-            <input id="rf-name" name="name" type="text" autocomplete="name" required />
-          </div>
-          <div class="field">
-            <label for="rf-email">Email</label>
-            <input id="rf-email" name="email" type="email" autocomplete="email" required />
-          </div>
-          <div class="field">
-            <label for="rf-arrival">Arrival</label>
-            <input id="rf-arrival" name="arrival" type="date" required />
-          </div>
-          <div class="field">
-            <label for="rf-departure">Departure</label>
-            <input id="rf-departure" name="departure" type="date" required />
-          </div>
-          <div class="field">
-            <label for="rf-guests">Guests</label>
-            <input id="rf-guests" name="guests" type="number" min="1" max="10" value="2" required />
-          </div>
-          <div class="field field--full">
-            <label for="rf-message">Anything we should know? <span class="opt">(optional)</span></label>
-            <textarea id="rf-message" name="message" rows="4"></textarea>
-          </div>
-          <div class="field field--full form-actions">
-            <button type="submit" class="btn">Send request</button>
-            <p class="form-note">This opens your email app — no booking is confirmed until we reply.</p>
-          </div>
-        </form>
+        <!-- Real-time booking engine (area.ly — Taberne property 134) -->
+        <div class="booking-embed">
+          <div id="ar-root" data-property="134"></div>
+        </div>
+
+        <details class="reserve-fallback">
+          <summary>Booking not loading? Send a request by email instead</summary>
+          <form id="reserve-form" class="reserve-form" novalidate>
+            <div class="field">
+              <label for="rf-name">Full name</label>
+              <input id="rf-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="rf-email">Email</label>
+              <input id="rf-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="rf-arrival">Arrival</label>
+              <input id="rf-arrival" name="arrival" type="date" required />
+            </div>
+            <div class="field">
+              <label for="rf-departure">Departure</label>
+              <input id="rf-departure" name="departure" type="date" required />
+            </div>
+            <div class="field">
+              <label for="rf-guests">Guests</label>
+              <input id="rf-guests" name="guests" type="number" min="1" max="10" value="2" required />
+            </div>
+            <div class="field field--full">
+              <label for="rf-message">Anything we should know? <span class="opt">(optional)</span></label>
+              <textarea id="rf-message" name="message" rows="4"></textarea>
+            </div>
+            <div class="field field--full form-actions">
+              <button type="submit" class="btn">Send request</button>
+              <p class="form-note">This opens your email app — no booking is confirmed until we reply.</p>
+            </div>
+          </form>
+        </details>
       </div>
     </section>
 
@@ -241,9 +249,22 @@
     </div>
   </footer>
 
+  <!-- area.ly booking engine: loads the live availability/booking widget into #ar-root -->
   <script>
-    // "Reserve a room" form: no server behind this site, so instead of sending
-    // the form we build a pre-filled email and open the visitor's mail app.
+    (function (d, s, i, v, l) {
+      var js = d.getElementsByTagName(s)[0];
+      if (d.getElementById(i)) return;
+      var el = d.createElement(s);
+      el.id = i;
+      el.onload = function () { if (window.AR) AR.init({}); };
+      el.src = 'https://assets.arealy.net/bookingengine/' + l + '/' + v + '/sdk.min.js';
+      js.parentNode.insertBefore(el, js);
+    }(document, 'script', 'ar-sdk', 'v2.1', 'en'));
+  </script>
+
+  <script>
+    // Fallback "book by email" form (inside the collapsed <details>): builds a
+    // pre-filled email and opens the visitor's mail app instead of sending.
     document.getElementById('reserve-form').addEventListener('submit', function (event) {
       event.preventDefault();                 // don't reload the page
 
