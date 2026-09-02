@@ -505,3 +505,21 @@ html:lang(ka) {
 @media (max-width: 560px) {
   .rooms-grid, .amenities, .stay-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- Full photo gallery ---------- */
+.photo-gallery {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.photo-gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  transition: transform var(--transition);
+}
+.photo-gallery img:hover { transform: scale(1.02); }
+@media (max-width: 860px) { .photo-gallery { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 520px) { .photo-gallery { grid-template-columns: repeat(2, 1fr); } }
