@@ -419,3 +419,27 @@ p { margin: 0 0 1rem; }
 #ar-root > iframe { width: 100%; border: 0; }
 
 .reserve-fallback { max-width: 720px; margin: 0 auto; }
+
+/* ---------- Language switcher + per-language fonts ---------- */
+html:lang(ka) {
+  --font-head: "Noto Serif Georgian", "Cormorant Garamond", Georgia, serif;
+  --font-body: "Noto Sans Georgian", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.lang-switch { display: flex; align-items: center; gap: 2px; }
+.lang-switch a {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  padding: 4px 7px;
+  border-radius: 3px;
+  transition: color var(--transition), background var(--transition);
+}
+.lang-switch a:hover { color: var(--wine); }
+.lang-switch a.is-active { color: var(--wine); background: rgba(107, 31, 42, 0.08); }
+
+@media (max-width: 860px) {
+  .lang-switch { justify-content: center; margin-top: 6px; }
+}
