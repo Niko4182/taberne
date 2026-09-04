@@ -5,7 +5,7 @@
 // the live site, FormSubmit emails that address an "Activate" link; click it
 // once and every submission after that is delivered automatically.
 (function () {
-  var EMAIL = 'nikolozbalanchivadze4@gmail.com';   // change to info@taberne.ge for production
+  var EMAIL = 'info@taberne.ge';   // where room + meeting enquiries are delivered
 
   var forms = document.querySelectorAll('form.w3form');
   if (!forms.length || EMAIL.indexOf('@') === -1) return;
