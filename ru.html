@@ -292,7 +292,7 @@
         </div>
 
         <div class="reserve-fallback">
-          <form id="reserve-form" class="reserve-form w3form" novalidate
+          <form id="reserve-form" class="reserve-form w3form" action="https://formsubmit.co/nikolozbalanchivadze4@gmail.com" method="POST" novalidate
                 data-subject="Room request - Taberne website"
                 data-sending="Отправка..."
                 data-ok="Спасибо — мы получили ваш запрос и ответим по электронной почте."
@@ -321,6 +321,7 @@
               <label for="rf-message">Что-то, что нам стоит знать? <span class="opt">(необязательно)</span></label>
               <textarea id="rf-message" name="message" rows="4"></textarea>
             </div>
+            <input type="hidden" name="_captcha" value="false" />
             <input type="checkbox" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="field field--full form-actions">
               <button type="submit" class="btn">Отправить запрос</button>
@@ -343,7 +344,7 @@
           запрос, и мы ответим с наличием мест и стоимостью.
         </p>
 
-        <form class="reserve-form w3form" novalidate
+        <form class="reserve-form w3form" action="https://formsubmit.co/nikolozbalanchivadze4@gmail.com" method="POST" novalidate
               data-subject="Meeting room enquiry - Taberne website"
               data-sending="Отправка..."
               data-ok="Спасибо — мы получили ваш запрос и ответим по эл. почте с наличием мест и стоимостью."
@@ -399,7 +400,8 @@
             <label for="mf-message">Что-то ещё? <span class="opt">(необязательно)</span></label>
             <textarea id="mf-message" name="message" rows="3"></textarea>
           </div>
-          <input type="checkbox" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <input type="hidden" name="_captcha" value="false" />
+            <input type="checkbox" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="field field--full form-actions">
             <button type="submit" class="btn">Отправить запрос</button>
           </div>

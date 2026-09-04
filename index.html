@@ -293,7 +293,7 @@
         </div>
 
         <div class="reserve-fallback">
-          <form id="reserve-form" class="reserve-form w3form" novalidate
+          <form id="reserve-form" class="reserve-form w3form" action="https://formsubmit.co/nikolozbalanchivadze4@gmail.com" method="POST" novalidate
                 data-subject="Room request - Taberne website"
                 data-sending="Sending..."
                 data-ok="Thank you - we have your request and will reply by email."
@@ -322,6 +322,7 @@
               <label for="rf-message">Anything we should know? <span class="opt">(optional)</span></label>
               <textarea id="rf-message" name="message" rows="4"></textarea>
             </div>
+            <input type="hidden" name="_captcha" value="false" />
             <input type="checkbox" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="field field--full form-actions">
               <button type="submit" class="btn">Send request</button>
@@ -344,7 +345,7 @@
           availability and a quote.
         </p>
 
-        <form class="reserve-form w3form" novalidate
+        <form class="reserve-form w3form" action="https://formsubmit.co/nikolozbalanchivadze4@gmail.com" method="POST" novalidate
               data-subject="Meeting room enquiry - Taberne website"
               data-sending="Sending..."
               data-ok="Thank you - we have your enquiry and will reply by email with availability and a quote."
@@ -400,7 +401,8 @@
             <label for="mf-message">Anything else? <span class="opt">(optional)</span></label>
             <textarea id="mf-message" name="message" rows="3"></textarea>
           </div>
-          <input type="checkbox" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <input type="hidden" name="_captcha" value="false" />
+            <input type="checkbox" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="field field--full form-actions">
             <button type="submit" class="btn">Send enquiry</button>
           </div>
