@@ -33,22 +33,32 @@
       })
         .then(function (r) { return r.json(); })
         .then(function (j) {
-          var ok = j && (j.success === true || j.success === 'true');
-          show(ok);
-          if (ok) form.reset();
+          var msg = (j && j.message) || '';
+          if (/activat/i.test(msg)) {
+            // one-time: FormSubmit just emailed an activation link to EMAIL
+            set('is-info', form.dataset.activate ||
+              'Almost there — we’ve emailed an activation link. Click it once, then this form is live.');
+            return;
+          }
+          if (j && (j.success === true || j.success === 'true')) {
+            set('is-ok', form.dataset.ok || 'Thank you — we have your request and will reply by email.');
+            form.reset();
+          } else {
+            set('is-err', form.dataset.err || 'Sorry, something went wrong. Please email info@taberne.ge.');
+          }
         })
-        .catch(function () { show(false); })
+        .catch(function () {
+          set('is-err', form.dataset.err || 'Sorry, something went wrong. Please email info@taberne.ge.');
+        })
         .finally(function () {
           if (btn) { btn.disabled = false; btn.textContent = btn._label || 'Send'; }
         });
 
-      function show(ok) {
+      function set(cls, text) {
         if (!status) return;
         status.hidden = false;
-        status.className = 'form-status field--full ' + (ok ? 'is-ok' : 'is-err');
-        status.textContent = ok
-          ? (form.dataset.ok || 'Thank you - we have your request and will reply by email.')
-          : (form.dataset.err || 'Sorry, something went wrong. Please email info@taberne.ge.');
+        status.className = 'form-status field--full ' + cls;
+        status.textContent = text;
       }
     });
   });

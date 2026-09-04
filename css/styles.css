@@ -594,3 +594,5 @@ html:lang(ka) {
 }
 
 #meetings .reserve-form { margin-top: 40px; }
+
+.form-status.is-info { background: #e9eef6; color: #274b8a; border: 1px solid #bcccdf; }
