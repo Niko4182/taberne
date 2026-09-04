@@ -564,3 +564,33 @@ html:lang(ka) {
 .lightbox-nav { top: 50%; transform: translateY(-50%); font-size: 2.8rem; }
 .lightbox-prev { left: 6px; }
 .lightbox-next { right: 6px; }
+
+/* ---------- Web3Forms: status message, select, honeypot ---------- */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
+
+.form-status {
+  margin: 6px 0 0;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+}
+.form-status.is-ok  { background: #e8f3ea; color: #1f6b39; border: 1px solid #bcdcc4; }
+.form-status.is-err { background: #f7e7e6; color: #8a2b26; border: 1px solid #e2bdba; }
+
+.reserve-form select {
+  width: 100%;
+  padding: 11px 12px;
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.reserve-form select:focus {
+  outline: none;
+  border-color: var(--wine);
+  box-shadow: 0 0 0 3px rgba(107, 31, 42, 0.12);
+}
+
+#meetings .reserve-form { margin-top: 40px; }

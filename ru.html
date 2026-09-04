@@ -13,6 +13,7 @@
   <link rel="alternate" hreflang="ru" href="ru.html" />
   <link rel="stylesheet" href="css/styles.css" />
   <script src="js/gallery.js" defer></script>
+  <script src="js/forms.js" defer></script>
 </head>
 <body>
   <!-- ============ NAVBAR ============ -->
@@ -291,7 +292,11 @@
         </div>
 
         <div class="reserve-fallback">
-          <form id="reserve-form" class="reserve-form" novalidate>
+          <form id="reserve-form" class="reserve-form w3form" novalidate
+                data-subject="Room request - Taberne website"
+                data-sending="Отправка..."
+                data-ok="Спасибо — мы получили ваш запрос и ответим по электронной почте."
+                data-err="К сожалению, что-то пошло не так. Напишите нам: info@taberne.ge">
             <div class="field">
               <label for="rf-name">Имя и фамилия</label>
               <input id="rf-name" name="name" type="text" autocomplete="name" required />
@@ -316,10 +321,12 @@
               <label for="rf-message">Что-то, что нам стоит знать? <span class="opt">(необязательно)</span></label>
               <textarea id="rf-message" name="message" rows="4"></textarea>
             </div>
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="field field--full form-actions">
               <button type="submit" class="btn">Отправить запрос</button>
-              <p class="form-note">Откроется ваше почтовое приложение — бронь подтверждается только после нашего ответа.</p>
+              <p class="form-note">Мы ответим по эл. почте — бронь подтверждается только после этого.</p>
             </div>
+            <p class="form-status field--full" hidden></p>
           </form>
         </div>
       </div>
@@ -327,14 +334,77 @@
 
     <!-- ============ MEETINGS ============ -->
     <section class="section" id="meetings">
-      <div class="container center">
-        <h2>Встречи и мероприятия</h2>
-        <p class="section-lead">
+      <div class="container">
+        <h2 class="center">Встречи и мероприятия</h2>
+        <p class="center section-lead">
           Современный конференц-зал до 50 человек, с полным аудио- и
           видеооборудованием и быстрым Wi-Fi &mdash; для воркшопов, презентаций и
-          небольших конференций. Кейтеринг из нашей кухни по запросу.
+          небольших конференций. Кейтеринг из нашей кухни по запросу. Отправьте
+          запрос, и мы ответим с наличием мест и стоимостью.
         </p>
-        <a class="btn" href="mailto:info@taberne.ge?subject=Meeting%20room%20enquiry">Написать о конференц-зале</a>
+
+        <form class="reserve-form w3form" novalidate
+              data-subject="Meeting room enquiry - Taberne website"
+              data-sending="Отправка..."
+              data-ok="Спасибо — мы получили ваш запрос и ответим по эл. почте с наличием мест и стоимостью."
+              data-err="К сожалению, что-то пошло не так. Напишите нам: info@taberne.ge">
+          <div class="field">
+            <label for="mf-name">Имя и фамилия</label>
+            <input id="mf-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="mf-email">Эл. почта</label>
+            <input id="mf-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="mf-phone">Телефон</label>
+            <input id="mf-phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+          <div class="field">
+            <label for="mf-date">Дата</label>
+            <input id="mf-date" name="date" type="date" required />
+          </div>
+          <div class="field">
+            <label for="mf-start">Начало</label>
+            <input id="mf-start" name="start_time" type="time" />
+          </div>
+          <div class="field">
+            <label for="mf-end">Окончание</label>
+            <input id="mf-end" name="end_time" type="time" />
+          </div>
+          <div class="field">
+            <label for="mf-people">Человек</label>
+            <input id="mf-people" name="people" type="number" min="1" max="50" />
+          </div>
+          <div class="field">
+            <label for="mf-layout">Рассадка</label>
+            <select id="mf-layout" name="layout">
+              <option>Пока не знаю</option>
+              <option>Театр</option>
+              <option>Совет директоров</option>
+              <option>П-образная</option>
+              <option>Классная</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="mf-catering">Кейтеринг</label>
+            <select id="mf-catering" name="catering">
+              <option>Не нужен</option>
+              <option>Кофе и закуски</option>
+              <option>Обед</option>
+              <option>Весь день</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <label for="mf-message">Что-то ещё? <span class="opt">(необязательно)</span></label>
+            <textarea id="mf-message" name="message" rows="3"></textarea>
+          </div>
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="field field--full form-actions">
+            <button type="submit" class="btn">Отправить запрос</button>
+          </div>
+          <p class="form-status field--full" hidden></p>
+        </form>
       </div>
     </section>
 
@@ -401,32 +471,5 @@
     }(document, 'script', 'ar-sdk', 'v2.1', 'en'));
   </script>
 
-  <script>
-    // Fallback "book by email" form: builds a pre-filled email and opens the mail app.
-    document.getElementById('reserve-form').addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      var val = function (id) { return document.getElementById(id).value.trim(); };
-
-      var name = val('rf-name');
-      var lines = [
-        'Name: '      + name,
-        'Email: '     + val('rf-email'),
-        'Arrival: '   + val('rf-arrival'),
-        'Departure: ' + val('rf-departure'),
-        'Guests: '    + val('rf-guests'),
-        '',
-        'Message:',
-        val('rf-message') || '(none)'
-      ];
-
-      var subject = 'Room request - ' + (name || 'website');
-      var mailto  = 'mailto:info@taberne.ge'
-                  + '?subject=' + encodeURIComponent(subject)
-                  + '&body='    + encodeURIComponent(lines.join('\n'));
-
-      window.location.href = mailto;
-    });
-  </script>
 </body>
 </html>
