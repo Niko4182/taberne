@@ -37,6 +37,7 @@ body {
   color: var(--ink);
   background: var(--cream);
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;          /* nothing can push the page wider than the screen */
 }
 
 img { max-width: 100%; display: block; }
@@ -330,7 +331,7 @@ p { margin: 0 0 1rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 920px) {
   .nav-burger { display: block; }
   .lang-switch { margin-left: 0; }
 
@@ -391,6 +392,7 @@ p { margin: 0 0 1rem; }
 .reserve-form input,
 .reserve-form textarea {
   width: 100%;
+  max-width: 100%;
   padding: 11px 12px;
   font: inherit;
   color: var(--ink);
@@ -566,7 +568,7 @@ html:lang(ka) {
 .lightbox-next { right: 6px; }
 
 /* ---------- Web3Forms: status message, select, honeypot ---------- */
-.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
+.hp { display: none; }
 
 .form-status {
   margin: 6px 0 0;
@@ -579,6 +581,7 @@ html:lang(ka) {
 
 .reserve-form select {
   width: 100%;
+  max-width: 100%;
   padding: 11px 12px;
   font: inherit;
   color: var(--ink);
