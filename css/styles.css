@@ -349,15 +349,17 @@ p { margin: 0 0 1rem; }
     transition: max-height var(--transition), padding var(--transition);
   }
   .nav-toggle:checked ~ .nav {
-    max-height: 340px;
+    max-height: 85vh;
+    overflow-y: auto;
     padding-block: 16px 24px;
   }
 
   .nav-list {
     flex-direction: column;
-    gap: 14px;
+    gap: 4px;
     width: 100%;
   }
+  .nav-list a { display: block; width: 100%; padding: 10px 0; }
 
   .nav-toggle:checked ~ .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-toggle:checked ~ .nav-burger span:nth-child(2) { opacity: 0; }
