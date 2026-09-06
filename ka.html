@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <script src="js/gallery.js" defer></script>
   <script src="js/forms.js" defer></script>
+  <script src="js/calc.js" defer></script>
 </head>
 <body>
   <!-- ============ NAVBAR ============ -->
@@ -303,6 +304,38 @@
           მოგვწერეთ თარიღები და ჩვენ ელფოსტით დაგიდასტურებთ ხელმისაწვდომობასა და
           ფასს. მალე ხელმისაწვდომი იქნება ონლაინ დაჯავშნაც.
         </p>
+
+        <div id="calc" class="reserve-form calc"
+             data-prompt="აირჩიეთ ნომერი და თარიღები სავარაუდო ფასისთვის."
+             data-night="ღამე" data-nights="ღამე" data-approx="დაახლ.">
+          <div class="field">
+            <label for="calc-type">ნომრის ტიპი</label>
+            <select id="calc-type" name="type">
+              <option>Budget Twin Room</option>
+              <option>Standard Single</option>
+              <option>Standard Double</option>
+              <option>Standard Twin</option>
+              <option>Superior Double</option>
+              <option>Superior Twin</option>
+              <option>Family Room</option>
+              <option>Family Room with Balcony</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="calc-in">ჩექ-ინი</label>
+            <input id="calc-in" name="checkin" type="date" />
+          </div>
+          <div class="field">
+            <label for="calc-out">ჩექ-აუთი</label>
+            <input id="calc-out" name="checkout" type="date" />
+          </div>
+          <div class="field">
+            <label for="calc-rooms">ნომრები</label>
+            <input id="calc-rooms" name="rooms" type="number" min="1" max="10" value="1" />
+          </div>
+          <p class="calc-out field--full">აირჩიეთ ნომერი და თარიღები სავარაუდო ფასისთვის.</p>
+          <p class="calc-note field--full">სავარაუდო ფასები &mdash; საბოლოო ღირებულება დაჯავშნისას დაზუსტდება.</p>
+        </div>
 
         <!-- Real-time booking engine (area.ly — Taberne property 134) -->
         <div class="booking-embed">

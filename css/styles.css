@@ -602,3 +602,28 @@ html:lang(ka) {
 #meetings .reserve-form { margin-top: 40px; }
 
 .form-status.is-info { background: #e9eef6; color: #274b8a; border: 1px solid #bcccdf; }
+
+/* ---------- Price estimator ---------- */
+.calc { max-width: 720px; margin: 0 auto 40px; }
+.calc-out {
+  margin: 4px 0 0;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--cream);
+  border: 1px solid var(--line);
+  font-size: 1rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+.calc-out.has-value {
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  color: var(--wine);
+  background: #fff;
+}
+.calc-note {
+  margin: 10px 0 0 !important;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  text-align: center;
+}

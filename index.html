@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <script src="js/gallery.js" defer></script>
   <script src="js/forms.js" defer></script>
+  <script src="js/calc.js" defer></script>
 </head>
 <body>
   <!-- ============ NAVBAR ============ -->
@@ -303,6 +304,38 @@
           Send us your dates and we&rsquo;ll confirm availability and a price by email.
           Instant online booking is coming soon.
         </p>
+
+        <div id="calc" class="reserve-form calc"
+             data-prompt="Choose a room and your dates to see an estimate."
+             data-night="night" data-nights="nights" data-approx="about">
+          <div class="field">
+            <label for="calc-type">Room type</label>
+            <select id="calc-type" name="type">
+              <option>Budget Twin Room</option>
+              <option>Standard Single</option>
+              <option>Standard Double</option>
+              <option>Standard Twin</option>
+              <option>Superior Double</option>
+              <option>Superior Twin</option>
+              <option>Family Room</option>
+              <option>Family Room with Balcony</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="calc-in">Check-in</label>
+            <input id="calc-in" name="checkin" type="date" />
+          </div>
+          <div class="field">
+            <label for="calc-out">Check-out</label>
+            <input id="calc-out" name="checkout" type="date" />
+          </div>
+          <div class="field">
+            <label for="calc-rooms">Rooms</label>
+            <input id="calc-rooms" name="rooms" type="number" min="1" max="10" value="1" />
+          </div>
+          <p class="calc-out field--full">Choose a room and your dates to see an estimate.</p>
+          <p class="calc-note field--full">Example rates &mdash; the final price is confirmed when you book.</p>
+        </div>
 
         <!-- Real-time booking engine (area.ly — Taberne property 134).
              Appears here once area.ly authorises this site's domain. -->
